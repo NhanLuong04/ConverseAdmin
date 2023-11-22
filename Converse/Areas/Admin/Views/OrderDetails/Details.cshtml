@@ -1,0 +1,35 @@
+﻿@model Converse.Models.OrderDetail
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/Admin_layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OrderDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.CusPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.CusPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProDetail.SHAPE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProDetail.SHAPE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OrderDetailID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

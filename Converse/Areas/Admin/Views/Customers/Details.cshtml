@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Converse.Models.Order>
+
+@{
+    ViewBag.Title = "Đơn hàng";
+    Layout = "~/Areas/Admin/Views/Shared/Admin_layout.cshtml";
+}
+
+<h1 style="text-align:center">
+    @ViewBag.Title
+</h1>
+<style>
+    th, td {
+        text-align:center;
+    }
+</style>
+
+<table class="table table-bordered">
+    <tr>
+        <th>
+            Họ và tên người nhận
+        </th>
+        <th>
+            SĐT
+        </th>
+        <th>
+            Ngày đặt hàng
+        </th>
+        <th>
+            Địa chỉ giao hàng
+        </th>
+        <th>
+            Ghi chú
+        </th>
+        <th>
+            Phương thức thanh toán
+        </th>
+        <th>
+            Tổng tiền
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @string.Format($"{item.Customer.CusSurname} {item.Customer.CusName}")
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Customer.CusPhone)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.OrderDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AddressDeliverry)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.notes)
+    </td>
+    <td>
+        @Html.Raw(item.payment == 1 ? "Thanh toán bằng tiền mặt" : "Thanh toán qua ngân hàng")
+    </td>
+    <td>
+        @string.Format("{0:#,0}", item.TotalValue)
+    </td>
+</tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Quay lại", "Index", null, new { @class = "btn btn-primary" })
+</div>

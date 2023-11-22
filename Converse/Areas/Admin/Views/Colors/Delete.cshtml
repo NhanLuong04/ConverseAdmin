@@ -1,0 +1,50 @@
+﻿@model Converse.Models.Color
+
+@{
+    ViewBag.Title = "Xóa màu sắc";
+    Layout = "~/Areas/Admin/Views/Shared/Admin_layout.cshtml";
+}
+
+
+<h1>
+    @ViewBag.Title
+</h1>
+
+
+<h2>Bạn muốn xóa chứ?</h2>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên màu sắc
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ColorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RGB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RGB)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-danger" /> |
+            @Html.ActionLink("Quay lại", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    }
+</div>
+
+@Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

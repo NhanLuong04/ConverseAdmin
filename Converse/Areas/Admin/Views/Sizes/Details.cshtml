@@ -1,0 +1,27 @@
+﻿@model Converse.Models.Size
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/Admin_layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Size</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SizeNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SizeNum)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SizeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

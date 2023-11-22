@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Converse.Models.ProDetail>
+
+@{
+    ViewBag.Title = "Danh sách kho hàng";
+    Layout = "~/Areas/Admin/Views/Shared/Admin_layout.cshtml";
+    var dsTon = Model.Where(p => p.Quantity > 0).ToList();
+    var dsCanNhap = Model.Where(p => p.Quantity == 0).ToList();
+}
+
+<h1>
+    @ViewBag.Title
+</h1>
+
+
+<div>
+    @Html.Partial("DSCanNhap", dsCanNhap)
+</div>
+
+<div>
+    @Html.Partial("DSTon", dsTon)
+</div>

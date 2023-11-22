@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Converse.Models.Customer>
+
+@{
+    ViewBag.Title = "Danh sách khách hàng";
+    Layout = "~/Areas/Admin/Views/Shared/Admin_layout.cshtml";
+}
+
+<h1>
+    @ViewBag.Title
+</h1>
+<style>
+    h1 {
+        text-align: center;
+        padding-block: 30px;
+    }
+
+    th {
+        white-space: nowrap;
+    }
+
+    th, td {
+        padding: 10px 20px;
+        text-align: center;
+    }
+</style>
+
+<table class="table table-bordered">
+    <tr>
+        <th>
+            Họ
+        </th>
+        <th>
+            Tên
+        </th>
+        <th>
+            SĐT
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Mật khẩu
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CusSurname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CusName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CusPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CusEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CusPassword)
+            </td>
+            <td>
+                @Html.ActionLink("Đơn hàng", "Details", new { id = item.CusPhone }, new { @class = "btn btn-success" })
+            </td>
+        </tr>
+    }
+
+</table>    

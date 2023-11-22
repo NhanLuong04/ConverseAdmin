@@ -1,0 +1,35 @@
+﻿@model Converse.Models.Size
+
+@{
+    ViewBag.Title = "Xóa kích cỡ giày";
+    Layout = "~/Areas/Admin/Views/Shared/Admin_layout.cshtml";
+}
+
+<h1>
+    @ViewBag.Title
+</h1>
+
+<h2>Bạn muốn xóa chứ?</h2>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Kích cỡ giày
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SizeNum)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-danger" /> |
+            @Html.ActionLink("Quay lại", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    }
+</div>

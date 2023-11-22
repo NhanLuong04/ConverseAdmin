@@ -1,0 +1,136 @@
+﻿@model Converse.Models.ProDetail
+
+@{
+    ViewBag.Title = "Xóa chi tiết sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/Admin_layout.cshtml";
+}
+
+<h1">
+    @ViewBag.Title
+</h1">
+<style>
+    dt, dd {
+        padding: 10px 20px;
+    }
+</style>
+
+<h2 style="color:red">Bạn muốn xóa chứ?</h2>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Số lượng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+
+        <dt>
+            Hình dáng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SHAPE)
+        </dd>
+
+        <dt>
+            Từ khóa
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KEYWORD)
+        </dd>
+
+        <dt>
+            Giá
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            Hình 1
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.Image1)" width="100" height="100" />
+        </dd>
+
+        <dt>
+            Hình 2
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.Image2)" width="100" height="100" />
+        </dd>
+
+        <dt>
+            Hình 3
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.Image3)" width="100" height="100" />
+        </dd>
+
+        <dt>
+            Hình 4
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.Image4)" width="100" height="100" />
+        </dd>
+
+        <dt>
+            Hình 5
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.Image5)" width="100" height="100" />
+        </dd>
+
+        <dt>
+            Màu sắc
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Color.ColorName)
+        </dd>
+
+        <dt>
+            Tên sản phẩm
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.ProName)
+        </dd>
+
+        <dt>
+            Kích cỡ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Size1.SizeNum)
+        </dd>
+
+        <dt>
+            Nhà cung cấp
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supplier.SupName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-danger" /> |
+            @Html.ActionLink("Quay lại", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    }
+</div>

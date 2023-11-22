@@ -1,0 +1,117 @@
+﻿@model IEnumerable<Converse.Models.ProDetail>
+
+@{
+    ViewBag.Title = "Chi tiết sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/Admin_layout.cshtml";
+}
+
+<h1>
+    @ViewBag.Title
+</h1>
+<style>
+    h1 {
+        text-align: center;
+        padding-block: 30px;
+    }
+
+    th {
+        white-space: nowrap;
+    }
+
+    th, td {
+        padding: 10px 20px;
+        text-align: center;
+    }
+</style>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            Tên màu
+        </th>
+        <th>
+            Tên sản phẩm
+        </th>
+        <th>
+            Kích cỡ
+        </th>
+        <th>
+            Nhà cung cấp
+        </th>
+        <th>
+            Số lượng
+        </th>
+        <th>
+            Hình dáng
+        </th>
+        <th>
+            Từ khóa
+        </th>
+        <th>
+            Giá
+        </th>
+        <th>
+            Ảnh 1
+        </th>
+        <th>
+            Ảnh 2
+        </th>
+        <th>
+            Ảnh 3
+        </th>
+        <th>
+            Ảnh 4
+        </th>
+        <th>
+            Ảnh 5
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color.ColorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.ProName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Size1.SizeNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Supplier.SupName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SHAPE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KEYWORD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                <img src="@Url.Content(item.Image1)" width="100" height="100" />
+            </td>
+            <td>
+                <img src="@Url.Content(item.Image2)" width="100" height="100" />
+            </td>
+            <td>
+                <img src="@Url.Content(item.Image3)" width="100" height="100" />
+            </td>
+            <td>
+                <img src="@Url.Content(item.Image4)" width="100" height="100" />
+            </td>
+            <td>
+                <img src="@Url.Content(item.Image5)" width="100" height="100" />
+            </td>
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Quay lại", "Index", null, new { @class = "btn btn-primary" })
+</div>

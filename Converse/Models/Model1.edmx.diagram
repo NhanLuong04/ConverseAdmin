@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6275d1ad7cc347d1b7ac375ecbe5e41f" Name="Diagram1">
+        <EntityTypeShape EntityType="ConverseStoreModel.Category" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConverseStoreModel.Color" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConverseStoreModel.Customer" Width="1.5" PointX="3" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConverseStoreModel.Order" Width="1.5" PointX="5.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConverseStoreModel.OrderDetail" Width="1.5" PointX="7.5" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConverseStoreModel.ProDetail" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConverseStoreModel.Product" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConverseStoreModel.Size" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConverseStoreModel.Supplier" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConverseStoreModel.sysdiagram" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConverseStoreModel.User" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="ConverseStoreModel.FK_Pro_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="ConverseStoreModel.FK__ProDetail__Color__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="ConverseStoreModel.FK__Order__CusPhone__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="ConverseStoreModel.FK__OrderDeta__Order__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="ConverseStoreModel.FK__OrderDeta__ProDe__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="ConverseStoreModel.FK__ProDetail__ProID__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="ConverseStoreModel.FK__ProDetail__SupID__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="ConverseStoreModel.FK_ProDetail_Size" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

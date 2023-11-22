@@ -1,0 +1,76 @@
+﻿@model Converse.Models.OrderDetail
+
+@{
+    ViewBag.Title = "Chi tiết đơn hàng";
+    Layout = "~/Areas/Admin/Views/Shared/Admin_layout.cshtml";
+}
+
+<h1 style="text-align:center; padding-block:30px">
+    @ViewBag.Title
+</h1>
+<style>
+    th, td {
+        text-align: center;
+    }
+</style>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            Tên sản phẩm
+        </th>
+        <th>
+            Ảnh
+        </th>
+        <th>
+            Số lượng
+        </th>
+        <th>
+            Kích cỡ
+        </th>
+        <th>
+            Tổng
+        </th>
+        <th>
+            Phương thức thanh toán
+        </th>
+        <th>Thông tin người nhận</th>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.ProDetail.Product.ProName)
+        </td>
+        <td>
+            <img src="@Url.Content(Model.ProDetail.Image1)" width="100" height="100" />
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.ProDetail.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.ProDetail.Size1.SizeNum)
+        </td>
+        <td>
+            @string.Format("{0:#,0}", Model.Order.TotalValue)
+        </td>
+        <td>
+            @Html.Raw(Model.Order.payment == 1 ? "Thanh toán bằng tiền mặt" : "Thanh toán qua ngân hàng")
+        </td>
+        <td>
+            <div>
+                @Html.DisplayFor(model => model.Order.Customer.CusSurname)
+                @Html.DisplayFor(model => model.Order.Customer.CusName)
+            </div>
+            <div>
+                @Html.DisplayFor(model => model.Order.AddressDeliverry)
+            </div>
+            <div>
+                @Html.DisplayFor(model => model.Order.Customer.CusPhone)
+            </div>
+            <div>
+                @Html.DisplayFor(model => model.Order.Customer.CusEmail)
+            </div>
+        </td>
+    </tr>
+</table>
+<div>
+    @Html.ActionLink("Quay lại", "Index", null, new { @class = "btn btn-primary" })
+</div>

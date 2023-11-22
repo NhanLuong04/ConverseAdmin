@@ -1,0 +1,48 @@
+﻿@model Converse.Models.Supplier
+
+@{
+    ViewBag.Title = "Xóa nhà cung cấp";
+    Layout = "~/Areas/Admin/Views/Shared/Admin_layout.cshtml";
+}
+
+<h1>
+    @ViewBag.Title
+</h1>
+<style>
+    h1 {
+        text-align: center;
+        padding-block: 30px;
+    }
+</style>
+<h2 style="color:red">Bạn muốn xóa chứ?</h2>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên nhà cung cấp
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupName)
+        </dd>
+        <hr />
+        <dt>
+            Địa chỉ nhà cung cấp
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <hr />
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-danger" />
+            @Html.ActionLink("Quay lại", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    }
+</div>
